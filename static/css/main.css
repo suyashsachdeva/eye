@@ -27,18 +27,18 @@ input[type="file"] {
     margin:auto;
     max-width: 650px;
     background-color: #e2e2e2;
-    /* padding: 3rem; */
+    padding: 1rem;
     text-align: center;
     border: rgb(0, 0, 0);
     border-style: solid;
     border-radius: 4px;
 }
-/* 
-.upload{
+
+/* .upload{
   border-right: 40px;
   border-width: 20px;
   border-color: #2d2623;
-} */
+}  */
 
 .image-section{
   margin-left:40px;
