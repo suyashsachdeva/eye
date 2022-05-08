@@ -19,8 +19,6 @@ from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 # from gevent.pywsgi import WSGIServer
 
-file_model = r'C:\Users\suyash\Desktop\KACHRA\laohub\Smile in Pain\Ajgar Ke Jalve\Artificiall Intelligence\Neural Networks\Supervised Learning\Recurrent Nets\RNN\Audio\H5\final1000.h5'
-
 # Define a flask app
 app = Flask(__name__)
 
@@ -90,11 +88,12 @@ def preprocess_image(file):
     cv2.imwrite(output_filepath, cv2.resize(img, (IMG_SIZE,IMG_SIZE)))
 
 def model_predict(img_path):
-    main = r"C:\Users\suyash\Downloads\model_main_training.h5"
-    post = r"C:\Users\suyash\Downloads\model_post_training.h5"
+    path = os.getcwd()
+    main = r"\model_main_training.h5"
+    post = r"\model_post_training.h5"
 
-    model = load_model(main, compile=False)
-    end = load_model(post, compile=False)
+    model = load_model(path+main, compile=False)
+    end = load_model(path+post, compile=False)
     img = cv2.imread(img_path)
     img = circle_crop(img)
     img = img/255
